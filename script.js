@@ -1,18 +1,18 @@
-$(document).ready(function () {
-  $(".reviews-slider").slick({
+$(document).ready(function() {
+  $('.reviews-slider').slick({
     infinite: true,
     speed: 500,
     prevArrow: $("#reviews-previous"),
     nextArrow: $("#reviews-next"),
     fade: true,
-    swipe: false,
+    swipe: false, 
     draggable: false,
     slidesToShow: 1,
-    adaptiveHeight: true,
+    adaptiveHeight: true
   });
-
-  $(".reviews-slider").on("afterChange", function (event, slick, currentSlide) {
-    $("#reviews-number").text("0" + (currentSlide + 1));
+  
+  $('.reviews-slider').on('afterChange', function(event, slick, currentSlide) {
+    $('#reviews-number').text('0' + (currentSlide + 1));
   });
 
   //First slider
@@ -24,18 +24,18 @@ $(document).ready(function () {
     slidesToShow: 5,
     slidesToScroll: 1,
     centerMode: true,
-    centerPadding: "10%",
+    centerPadding: '10%',
     autoplaySpeed: 3500,
     responsive: [
-      {
-        breakpoint: 1024,
-        settings: { slidesToShow: 3 },
-      },
-      {
-        breakpoint: 600,
-        settings: { slidesToShow: 2 },
-      },
-    ],
+        {
+            breakpoint: 1024,
+            settings: {slidesToShow: 3}
+        },
+        {
+            breakpoint: 600, 
+            settings: {slidesToShow: 2}
+        }
+    ]
   });
 
   //Second slider
@@ -47,18 +47,18 @@ $(document).ready(function () {
     slidesToShow: 5,
     slidesToScroll: 1,
     centerMode: true,
-    centerPadding: "10%",
+    centerPadding: '10%',
     autoplaySpeed: 3500,
     responsive: [
-      {
-        breakpoint: 1024,
-        settings: { slidesToShow: 3 },
-      },
-      {
-        breakpoint: 600,
-        settings: { slidesToShow: 2 },
-      },
-    ],
+        {
+            breakpoint: 1024,
+            settings: {slidesToShow: 3}
+        },
+        {
+            breakpoint:600, 
+            settings: {slidesToShow: 2}
+        }
+    ]
   });
 
   $(".faq-enum div:first").addClass("active");
@@ -69,7 +69,8 @@ $(document).ready(function () {
       $(this).next("p").slideToggle("fast");
       $(".faq-enum div").removeClass("active");
       $(this).parent().toggleClass("active");
-    } else {
+    }
+    else {
       $(".faq-enum p:visible").slideUp("fast");
       $(".faq-enum div").removeClass("active");
     }
@@ -87,24 +88,21 @@ function saveLocalStorage() {
 
 function loadLocalStorage() {
   if (localStorage.getItem("name") !== null)
-    $("#footer-name").val(localStorage.getItem("footer-name"));
+      $("#footer-name").val(localStorage.getItem("footer-name"));
   if (localStorage.getItem("number") !== null)
-    $("#footer-number").val(localStorage.getItem("footer-number"));
+      $("#footer-number").val(localStorage.getItem("footer-number"));
   if (localStorage.getItem("email") !== null)
-    $("#footer-email").val(localStorage.getItem("footer-email"));
+      $("#footer-email").val(localStorage.getItem("footer-email"));
   if (localStorage.getItem("message") !== null)
-    $("#footer-message").val(localStorage.getItem("footer-message"));
+      $("#footer-message").val(localStorage.getItem("footer-message"));
   if (localStorage.getItem("policy") !== null) {
-    $("#footer-policy").prop(
-      "checked",
-      localStorage.getItem("footer-policy") === "true"
-    );
-    if ($("#footer-policy").prop("checked"))
-      $("#sendButton").removeAttr("disabled");
+      $("#footer-policy").prop("checked", localStorage.getItem("footer-policy") === "true");
+      if ($("#footer-policy").prop("checked"))
+          $("#sendButton").removeAttr("disabled");
   }
 }
 function clear() {
-  localStorage.clear();
+  localStorage.clear()
   $("#footer-name").val("");
   $("#footer-number").val("");
   $("#footer-email").val("");
@@ -115,29 +113,32 @@ function clear() {
 $(document).ready(function () {
   loadLocalStorage();
   $("#footer-form").submit(function (e) {
-    e.preventDefault();
-    let data = $(this).serialize();
+      e.preventDefault();
+      let data = $(this).serialize();
 
-    $.ajax({
-      type: "POST",
-      dataType: "json",
-      url: "https://formcarry.com/s/adu1AdDRs76",
-      data: data,
-      success: function (response) {
-        if (response.status == "success") {
-          alert("form send");
-          clear();
-        } else {
-          alert("error: " + response.message);
-        }
-      },
-    });
+      $.ajax({
+          type: "POST",
+          dataType: "json",
+          url: "https://formcarry.com/s/adu1AdDRs76",
+          data: data,
+          success: function (response) {
+              if (response.status == "success") {
+                  alert("form send");
+                  clear();
+              } else {
+                  alert("error: " + response.message);
+              }
+          }
+      });
   });
 
   $("#footer-policy").change(function () {
-    if (!this.checked) $("#sendButton").attr("disabled", "");
-    else $("#sendButton").removeAttr("disabled");
-  });
+      if ((!this.checked))
+          $("#sendButton").attr("disabled", "");
+      else
+          $("#sendButton").removeAttr("disabled");
+  })
+
 
   $("#footer-form").change(saveLocalStorage);
-});
+})
