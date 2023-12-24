@@ -1344,3 +1344,89 @@ header .container:before {
   }
 }
 
+/* laptop with whole info about expertise in durpal */
+
+.laptop {
+  background: linear-gradient(261.2deg, rgba(255, 255, 255, 0.19) -114.85%, rgba(255, 255, 255, 0) 69.04%), #090a13;
+  color: #fff;
+  margin-top: -200px;
+  padding-top: 180px;
+  padding-bottom: 0px;
+  position: relative;
+  z-index: 1;
+}
+
+.laptop::before {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: url(./img/drupal-logo-2.svg) no-repeat right bottom;
+  background-size: contain;
+}
+
+.laptop h2 {
+  margin-bottom: 20px;
+  color: #fff;
+}
+
+.laptop .redline-box {
+  margin-bottom: 30px;
+}
+
+.laptop .redline-text {
+  font-size: 16px;
+  max-width: 260px;
+}
+
+.laptop-pic {
+  position: relative;
+  width: 85%;
+  max-width: 650px;
+  z-index: 2;
+  left: 0;
+  bottom: 0;
+}
+
+.laptop-pic img {
+  width: 100%;
+  margin-bottom: -16%;
+  margin-top: 16%;
+}
+
+@media screen and (min-width: 768px) {
+  .laptop {
+    padding-top: 230px;
+  }
+  
+  .laptop h2 {
+    margin: 22px 0px 65px 0px;
+  }
+  
+  .laptop-pic {
+    width: 70%;
+  }
+}
+
+@media screen and (min-width: 992px) {
+  .laptop-pic {
+    position: absolute;
+    width: 50%;
+  }
+}
+
+@media screen and (min-width: 1081px) {
+  .laptop {
+    padding-top: 325px;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .laptop .block-redlines {
+    margin-bottom: 125px;
+  }
+}
+
