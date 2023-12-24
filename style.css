@@ -477,3 +477,160 @@ header .container:before {
   }
 }
 
+/* rates */
+
+.rates {
+  padding-bottom: 50px;
+  background: url("./img/D-background-opacity.svg") no-repeat right top, white;
+  background-size: cover;
+}
+
+.rates .container {
+  margin-bottom: 30px;
+}
+
+.rates .container .row {
+  align-items: flex-start;
+}
+
+.rates h2 {
+  font-size: 24px;
+  padding-top: 105px;
+  text-align: center;
+  color: #000;
+  margin-bottom: 40px
+}
+
+.rate-col {
+  margin-bottom: 15px;
+}
+
+.rate-unit {
+  border-radius: 5px;
+  border: 1px solid #e6e6e6;
+  padding: 30px 15px;
+  background: #fff;
+  margin: 0 auto;
+  transition: all 500ms;
+  transform-origin: center;
+  width: 420px;
+  max-width: 100%;
+}
+
+.rate-col:hover .rate-unit,
+.main-rate .rate-unit {
+  transform: none;
+  z-index: 15;
+  box-shadow: 0 4px 60px rgba(150, 150, 150, .3);
+}
+
+.rate-col:hover~.main-rate .rate-unit {
+  transform: none;
+  z-index: 0;
+  box-shadow: none;
+}
+
+.rate-col:hover~.main-rate .contact-button {
+  color: #f14d34;
+  background: rgba(0, 0, 0, 0);
+}
+
+.rate-unit:hover .contact-button,
+.main-rate .contact-button {
+  color: #fff;
+  background: #f14d34;
+}
+
+.rate-name {
+  border-bottom: 2px solid #e5e5e5;
+  margin-bottom: 50px;
+  font-size: 22px;
+  font-weight: bold;
+  color: #f14d32;
+  line-height: 1.3;
+  padding-bottom: 29px;
+}
+
+.rates ul {
+  padding-left: 15px;
+  list-style-image: url("./img/checkmark.svg");
+}
+
+.rates li {
+  margin-bottom: 18px;
+  line-height: 1.2;
+  font-size: 14px;
+  font-weight: 100;
+  position: relative;
+  color: #4e5972;
+  padding-left: 15px;
+}
+
+.contact-button {
+  display: block;
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 12px;
+  color: #f14d34;
+  text-decoration: none;
+  padding: 20px 10px;
+  width: 100%;
+  text-align: center;
+  border: 1px solid #f14d34;
+  border-radius: 5px;
+  letter-spacing: 0.06em;
+  transition: background 300ms;
+  margin: 0 0;
+  background-color: rgba(0, 0, 0, 0);
+}
+
+.individual-rate {
+  text-align: center;
+  color: #828a9b;
+}
+
+.individual-rate a {
+  color: #000;
+  font-size: 12px;
+  text-decoration: underline;
+  transition: color 300ms;
+}
+
+.individual-rate a:hover {
+  color: #f14d34;
+  text-decoration: none;
+}
+
+@media screen and (min-width: 768px) {
+  .rates {
+    padding-bottom: 100px;
+    background-size: 58%;
+  }
+  
+  .rates h2 {
+    font-size: 42px;
+    padding-top: 160px;
+    margin-bottom: 65px
+  }
+  
+  .rate-unit {
+    max-width: 500px;
+    width: auto;
+  }
+}
+
+@media screen and (min-width: 992px) {
+  .rate-col:hover .rate-unit,
+  .main-rate .rate-unit {
+    transform: scale(1.1);
+  }
+  
+  .rate-unit {
+    padding: 70px 20px 60px;
+  }
+  
+  .rates li {
+    font-size: 16px;
+  }
+}
+
