@@ -15,6 +15,7 @@ $(document).ready(function() {
     $('#reviews-number').text('0' + (currentSlide + 1));
   });
 
+  //First slider
   $("#wwu-slider-1").slick({
     infinite: true,
     dots: false,
@@ -37,6 +38,7 @@ $(document).ready(function() {
     ]
   });
 
+  //Second slider
   $("#wwu-slider-2").slick({
     infinite: true,
     dots: false,
@@ -75,7 +77,7 @@ $(document).ready(function() {
   });
 });
 
-
+//Send form
 function saveLocalStorage() {
   localStorage.setItem("inputName", $("#footer-name").val());
   localStorage.setItem("inputNumber", $("#footer-number").val());
@@ -162,4 +164,27 @@ feedbackButtons.forEach((button) => {
         }
 
     })
+})
+
+feedbackModalClosed.addEventListener('click', () => {
+    feedbackModal.classList.remove('visible')
+})
+
+const nameInput = document.querySelector('input.name-input')
+const numberInput = document.querySelector('input.number-input')
+const emailInput = document.querySelector('input.email-input')
+const messageInput = document.querySelector('textarea.message-input')
+const nameInputFooter = document.querySelector('input.name-footer-input')
+const numberInputFooter = document.querySelector('input.number-footer-input')
+const emailInputFooter = document.querySelector('input.email-footer-input')
+const messageInputFooter = document.querySelector('textarea.message-footer-input')
+const navbarButton = document.querySelector('button.navbar-toggler')
+const navMenu = document.querySelector('div.navbar-collapse')
+
+navbarButton.addEventListener('click', () => {
+    if (navMenu.className === 'navbar-collapse collapse active') {
+        navMenu.classList.remove('active')
+    } else {
+        navMenu.classList.add('active')
+    }
 })
