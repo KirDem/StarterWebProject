@@ -15,7 +15,6 @@ $(document).ready(function() {
     $('#reviews-number').text('0' + (currentSlide + 1));
   });
 
-  //First slider
   $("#wwu-slider-1").slick({
     infinite: true,
     dots: false,
@@ -38,7 +37,6 @@ $(document).ready(function() {
     ]
   });
 
-    //Second slider
   $("#wwu-slider-2").slick({
     infinite: true,
     dots: false,
@@ -61,7 +59,7 @@ $(document).ready(function() {
     ]
   });  
 
-   $(".faq-enum div:first").addClass("active");
+  $(".faq-enum div:first").addClass("active");
   $(".faq-enum p:not(:first)").hide();
   $(".faq-enum h3").click(function () {
     if (!$(this).parent().hasClass("active")) {
@@ -77,7 +75,7 @@ $(document).ready(function() {
   });
 });
 
-//Send form
+
 function saveLocalStorage() {
   localStorage.setItem("inputName", $("#footer-name").val());
   localStorage.setItem("inputNumber", $("#footer-number").val());
@@ -142,3 +140,26 @@ $(document).ready(function () {
 
 $("#footer-form").change(saveLocalStorage);
 })                
+
+const feedbackButtons = document.querySelectorAll('button.contact-button')
+const feedbackModal = document.querySelector('div.feedback-form-modal')
+const feedbackModalClosed = document.querySelector('button.feedback-modal-btn')
+
+feedbackButtons.forEach((button) => {
+    const coordinateBtn = button.getBoundingClientRect()
+    console.log(coordinateBtn.left)
+    console.log(coordinateBtn.top)
+    button.addEventListener('mouseover', function (i) {
+        if (feedbackModal.className === 'feedback-form-modal') {
+            const coords = this.getBoundingClientRect()
+            feedbackModal.style = `
+            left: ${coords.left}px;
+            top: ${coords.bottom}px;
+        `
+            this.addEventListener('click', function () {
+                feedbackModal.classList.add('visible')
+            })
+        }
+
+    })
+})
