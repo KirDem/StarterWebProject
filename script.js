@@ -188,3 +188,49 @@ navbarButton.addEventListener('click', () => {
         navMenu.classList.add('active')
     }
 })
+
+const loadingStorage = () => {
+    if (localStorage.getItem('inputName') !== null) {
+        nameInputFooter.value = localStorage.getItem('inputName')
+        nameInput.value = localStorage.getItem('inputName')
+    }
+    if (localStorage.getItem('inputNumber') !== null) {
+        numberInputFooter.value = localStorage.getItem('inputNumber')
+        numberInput.value = localStorage.getItem('inputNumber')
+    }
+    if (localStorage.getItem('inputEmail') !== null) {
+        emailInputFooter.value = localStorage.getItem('inputEmail')
+        emailInput.value = localStorage.getItem('inputEmail')
+    }
+    if (localStorage.getItem('inputMessage') !== null) {
+        messageInputFooter.value = localStorage.getItem('inputMessage')
+        messageInput.value = localStorage.getItem('inputMessage')
+    }
+}
+
+loadingStorage()
+
+nameInput.oninput = (e) => {
+    localStorage.setItem('inputName', e.target.value)
+}
+numberInput.oninput = (e) => {
+    localStorage.setItem('inputNumber', e.target.value)
+}
+emailInput.oninput = (e) => {
+    localStorage.setItem('inputEmail', e.target.value)
+}
+messageInput.oninput = (e) => {
+    localStorage.setItem('inputMessage', e.target.value)
+}
+nameInputFooter.oninput = (e) => {
+    localStorage.setItem('inputName', e.target.value)
+}
+numberInputFooter.oninput = (e) => {
+    localStorage.setItem('inputNumber', e.target.value)
+}
+emailInputFooter.oninput = (e) => {
+    localStorage.setItem('inputEmail', e.target.value)
+}
+messageInputFooter.oninput = (e) => {
+    localStorage.setItem('inputMessage', e.target.value)
+}
