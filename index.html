@@ -26,7 +26,7 @@
   <div class="navbar-absolute">
     <div class="container-md">
       <nav class="navbar navbar-expand-md">
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <div class="navbar-collapse collapse" id="navbarSupportedContent">
           <ul class="navbar-nav mr-auto">
             <li class="navigation-item">
               <a class="nav-link" href="">ПОДДЕРЖКА DRUPAL</a>
@@ -69,8 +69,7 @@
         <a class="navbar-brand" href="">
           <img class="nav-icon" src="./img/drupal-coder.svg" alt="navigation" />
         </a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
-          aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <button class="navbar-toggler">
           <span class="navbar-toggler-icon"></span>
         </button>
       </nav>
@@ -420,6 +419,33 @@
               </ul>
               <button id="contact-button-2" class="contact-button">СВЯЖИТЕСЬ С НАМИ!</button>
             </div>
+          </div>
+          <div class="feedback-form-modal">
+            <button class="feedback-modal-btn">
+              <img src="./img/closeModal.svg" alt="">
+            </button>
+            <form id="footer-form" action="https://formcarry.com/s/adu1AdDRs76" method="POST">
+              <input name="name" id="footer-name" type="text" class="footer-block-input name name-input" placeholder="Ваше имя"
+                     required />
+              <input name="number" id="footer-number" type="text" class="footer-block-input number number-input" placeholder="Телефон"
+                     required />
+              <input name="email" id="footer-email" type="email" class="footer-block-input email email-input" placeholder="E-mail"
+                     required />
+              <textarea name="message" id="footer-message" placeholder="Ваш комментарий"
+                        class="footer-block-input message message-input"></textarea>
+              <label for="footer-policy" class="chb-block">
+                <input name="footer-policy" type="checkbox" class="chb" id="footer-policy" />
+                <span class="chb-place"></span>
+                <span>
+                        <span class="footer-checkbox-text">Отправляя заявку, я даю согласие на
+                          <a href="">обработку своих персональных данных</a>.
+                        </span>
+                      </span>
+              </label>
+
+              <input id="sendButton" type="submit" class="footer-contact-button" value="СВЯЖИТЕСЬ С НАМИ"
+                     disabled />
+            </form>
           </div>
           <div class="col-12 col-md-4 order-2 rate-col main-rate">
             <div class="rate-unit">
@@ -966,16 +992,16 @@
               <div class="col-12 col-md-6">
                 <div class="form-block">
                   <form id="footer-form" action="https://formcarry.com/s/adu1AdDRs76" method="POST">
-                    <input name="name" id="footer-name" type="text" class="footer-block-input" placeholder="Ваше имя"
+                    <input name="name" id="footer-name" type="text" class="footer-block-input name name-footer-input" placeholder="Ваше имя"
                       required />
-                    <input name="number" id="footer-number" type="text" class="footer-block-input" placeholder="Телефон"
+                    <input name="number" id="footer-number" type="text" class="footer-block-input number number-footer-input" placeholder="Телефон"
                       required />
-                    <input name="email" id="footer-email" type="email" class="footer-block-input" placeholder="E-mail"
+                    <input name="email" id="footer-email" type="email" class="footer-block-input email email-footer-input" placeholder="E-mail"
                       required />
                     <textarea name="message" id="footer-message" placeholder="Ваш комментарий"
-                      class="footer-block-input"></textarea>
-                    <label for="footer-policy" class="chb-block">
-                      <input name="footer-policy" type="checkbox" class="chb" id="footer-policy" />
+                      class="footer-block-input message message-footer-input"></textarea>
+                    <label for="footer-policy-2" class="chb-block">
+                      <input name="footer-policy-2" type="checkbox" class="chb" id="footer-policy-2" />
                       <span class="chb-place"></span>
                       <span>
                         <span class="footer-checkbox-text">Отправляя заявку, я даю согласие на
