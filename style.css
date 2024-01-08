@@ -54,6 +54,28 @@ h3 {
   border-bottom: solid 1px #fff;
   overflow-y: auto;
   max-height: calc(100vh - 49px);
+  opacity: 1;
+  transition: all 1s linear;
+}
+
+.navbar-collapse {
+  overflow-y: auto;
+  transition: height .4s linear;
+}
+
+@media (max-width: 768px) {
+  .navbar-collapse {
+    height: 0;
+  }
+  .collapse {
+    display: block !important;
+    border: none;
+  }
+}
+
+.navbar-collapse.active {
+  height: 70vh;
+  border-bottom: solid 1px #fff;
 }
 
 .navbar-nav {
@@ -171,6 +193,7 @@ nav .dropdown-item:hover, nav .dropdown-item:focus {
   
   .collapse {
     order: 1;
+    opacity: 1;
     border-bottom: unset;
     max-height: unset;
     overflow-y: unset;
@@ -1927,3 +1950,56 @@ label.footer-chb-block input[type='checkbox']:checked~span {
   font-style: normal;
   
   }
+
+
+/* Modal Window */
+.feedback-form-modal {
+  visibility: hidden;
+  max-width: 400px;
+  width: 100%;
+  padding: 40px;
+  background: linear-gradient(254.72deg,rgba(255,255,255,.276) -114.85%,rgba(255,255,255,0) 69.04%),#040613;
+  border-radius: 5px;
+  position: fixed;
+  z-index: 100;
+  box-shadow: 0 4px 20px #040613;
+  opacity: 0;
+}
+
+@media (max-width: 420px) {
+  .feedback-form-modal {
+    padding: 20px;
+  }
+}
+
+.feedback-form-modal .footer-checkbox-text {
+  color: #fff;
+}
+
+.feedback-form-modal.visible {
+  left: 50% !important;
+  top: 50% !important;
+  opacity: 1;
+  transition: all .2s linear !important;
+  transform: translate(-50%, -50%) !important;
+  visibility: visible !important;
+}
+
+
+.feedback-modal-btn {
+  position: absolute;
+  top: -7%;
+  right: -8%;
+  padding: 0;
+  border: none;
+  font: inherit;
+  color: inherit;
+  background-color: transparent;
+  cursor: pointer;
+
+}
+
+.feedback-modal-btn img {
+  width: 20px;
+  height: 20px;
+}
